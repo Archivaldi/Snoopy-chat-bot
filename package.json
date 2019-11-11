@@ -1,0 +1,23 @@
+{
+  "name": "Snoopy-chat-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Archivaldi/Snoopy-chat-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Archivaldi/Snoopy-chat-bot/issues"
+  },
+  "homepage": "https://github.com/Archivaldi/Snoopy-chat-bot#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
