@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Archivaldi/Snoopy-chat-bot#readme",
   "dependencies": {
     "body-parser": "1.19.0",
+    "dialogflow": "0.14.0",
     "express": "4.17.1"
   },
   "devDependencies": {
