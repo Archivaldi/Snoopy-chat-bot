@@ -4,18 +4,18 @@ const config = require("../config/keys");
 const structjson = require("./utils")
 
 const projectID = config.googleProjectID;
-const  credentials = {
-    client_email: config.googleClientEmail,
-    private_key: config.googlePrivateKey
+const credentials = {
+    "client_email": config.googleClientEmail,
+    "private_key": config.googlePrivateKey
 }
 
-const sessionClient = new dialogflow.SessionsClient({projectID, credentials});
+const sessionClient = new dialogflow.SessionsClient({ projectID, credentials });
 const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogFlowSessionID);
 
 
 
 module.exports = {
-    textQuery: async function(text, parameters = {}) {
+    textQuery: async function (text, parameters = {}) {
         let self = module.exports;
         const request = {
             session: sessionPath,
@@ -37,7 +37,7 @@ module.exports = {
         return responses;
     },
 
-    eventQuery: async function(event, parameters = {}) {
+    eventQuery: async function (event, parameters = {}) {
         let self = module.exports;
         const request = {
             session: sessionPath,
@@ -55,7 +55,7 @@ module.exports = {
         return responses;
     },
 
-    handleAction: function (responses){
+    handleAction: function (responses) {
         return responses;
     }
 }
