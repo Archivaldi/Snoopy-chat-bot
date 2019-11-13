@@ -30,16 +30,17 @@ module.exports = {
                     data: parameters
                 }
             }
-        };
+        }
+        .catch(err => {
+            if (err){
+                console.log(err)
+            }
+        })
 
         let responses = await sessionClient.detectIntent(request);
         responses = await self.handleAction(responses)
         return responses;
-    }.catch(err => {
-        if (err){
-            console.log(err)
-        }
-    }),
+    },
 
     eventQuery: async function (event, parameters = {}) {
         let self = module.exports;
@@ -52,16 +53,17 @@ module.exports = {
                     languageCode: config.dialogFlowSessionLanguageCode,
                 },
             }
-        };
+        }
+        .catch(err => {
+            if (err){
+                console.log(err)
+            }
+        })
 
         let responses = await sessionClient.detectIntent(request);
         responses = await self.handleAction(responses)
         return responses;
-    }.catch(err => {
-            if (err){
-                console.log(err)
-            }
-        }),
+    },
 
     handleAction: function (responses) {
         return responses;
