@@ -31,11 +31,6 @@ module.exports = {
                 }
             }
         }
-        .catch(err => {
-            if (err){
-                console.log(err)
-            }
-        })
 
         let responses = await sessionClient.detectIntent(request);
         responses = await self.handleAction(responses)
@@ -54,11 +49,6 @@ module.exports = {
                 },
             }
         }
-        .catch(err => {
-            if (err){
-                console.log(err)
-            }
-        })
 
         let responses = await sessionClient.detectIntent(request);
         responses = await self.handleAction(responses)
