@@ -35,7 +35,11 @@ module.exports = {
         let responses = await sessionClient.detectIntent(request);
         responses = await self.handleAction(responses)
         return responses;
-    },
+    }.catch(err => {
+        if (err){
+            console.log(err)
+        }
+    }),
 
     eventQuery: async function (event, parameters = {}) {
         let self = module.exports;
@@ -53,7 +57,11 @@ module.exports = {
         let responses = await sessionClient.detectIntent(request);
         responses = await self.handleAction(responses)
         return responses;
-    },
+    }.catch(err => {
+            if (err){
+                console.log(err)
+            }
+        }),
 
     handleAction: function (responses) {
         return responses;
