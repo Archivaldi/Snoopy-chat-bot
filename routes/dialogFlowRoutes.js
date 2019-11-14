@@ -12,7 +12,14 @@ module.exports = app => {
     })
 
     app.get("/", (req,res) => {
-        res.send({"hello": "there!",
-                    "this is " : "nodemon"})
+        res.json({
+            "just": "checking"
+        })
+    })
+
+    app.get("/api", (req,res) => {
+        res.json({
+            "just": "checking"
+        })
     })
 }
