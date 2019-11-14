@@ -11,15 +11,4 @@ module.exports = app => {
           res.send(responses[0].queryResult)
     })
 
-    app.get("/", (req,res) => {
-        res.json({
-            "just": "checking"
-        })
-    })
-
-    app.get("/api", (req,res) => {
-        res.json({
-            "just": "checking"
-        })
-    })
 }

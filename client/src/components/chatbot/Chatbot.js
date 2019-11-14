@@ -5,12 +5,14 @@ import Message from "./Message"
 
 
 class  Chatbot extends Component {
-
+    messagesEnd;
     constructor(props){
         super(props);
         this.state ={
             messages: [],
         }
+
+        this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
     };
 
     async df_text_query(text) {
@@ -57,13 +59,33 @@ class  Chatbot extends Component {
         }
     }
 
+    componentDidMount(){
+        this.df_event_query("Welcome");
+    }
+
+    componentDidUpdate(){
+        this.messagesEnd.scrollIntoView({behaviour: "smoth"});
+        this.focus();
+    }
+
+    _handleInputKeyPress(e){
+        if (e.key === "Enter"){
+            this.df_text_query(e.target.value);
+            e.target.value = "";
+        }
+    }
+
     render() {
         return (
             <div style={{height: "400px", width: "400px", float: "right"}}>
                 <div id="chatbot" style={{height: "100%", width: "100%", overflow: "auto"}}>
                     <h2>Chatbot</h2>
                     {this.renderMessages(this.state.messages)}
-                    <input type="text" />
+                    <div ref={(el) => {this.messagesEnd = el}}
+                    style={{float: "left", clear: "both"}}>
+
+                    </div>
+                    <input type="text" autoFocus="true" onKeyPress={this._handleInputKeyPress}/>
                 </div>
             </div>
         )
