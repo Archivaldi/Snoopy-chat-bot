@@ -4,6 +4,7 @@ import Cookies from "universal-cookie";
 import { v4 as uuid } from "uuid";
 
 import Message from "./Message";
+import Card from "./Card"
 
 const cookies = new Cookies(); 
 
@@ -22,7 +23,6 @@ class  Chatbot extends Component {
         if (cookies.get("userID") === undefined){
             cookies.set("userID", uuid(), {path: "/"})
         }
-        console.log(cookies.get("userID"))
     };
 
     async df_text_query(text) {
@@ -39,7 +39,6 @@ class  Chatbot extends Component {
         const res = await axios.post("/api/df_text_query", {text, userID: cookies.get("userID")});
 
         for (let msg of res.data.fulfillmentMessages){
-            console.log(JSON.stringify(msg))
             says = {
                 speaks: "bot",
                 msg: msg
@@ -60,6 +59,10 @@ class  Chatbot extends Component {
         }
     }
 
+    renderCards(cards) {
+        return cards.map((card, i) => <Card key={i} payload={card.structValue} />)
+    }
+
     renderOneMessage(message, i) {
         if (message.msg && message.msg.text && message.msg.text.text){
             return <Message key={i} speaks={message.speaks} text={message.msg.text.text} />
@@ -70,6 +73,11 @@ class  Chatbot extends Component {
                         <div style={{overflow: "hidden"}}>
                             <div className="col s2">
                                 <a className="btn-floating btn-large waves-effect waves-light red">{message.speaks}</a>
+                            </div>
+                            <div style={{overflow: "auto", overflowY:"scroll"}}>
+                                <div style={{height: 300, width: message.msg.payload.fields.cards.listValue.values.length * 270}}>
+                                    {this.renderCards(message.msg.payload.fields.cards.listValue.values)}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -106,15 +114,22 @@ class  Chatbot extends Component {
 
     render() {
         return (
-            <div style={{height: "400px", width: "400px", float: "right"}}>
-                <div id="chatbot" style={{height: "100%", width: "100%", overflow: "auto"}}>
+            <div style={{height: 500, width: 400, position: "absolute", bottom: 0, right: 0, border: "0px solid lightgrey"}}>
+                <nav>
+                    <div className="nav-wrapper">
+                        <a className="brand-logo">Snoopy</a>
+                    </div>
+                </nav>
+                <div id="chatbot" style={{height: 388, width: "100%", overflow: "auto"}}>
                     <h2>Chatbot</h2>
                     {this.renderMessages(this.state.messages)}
                     <div ref={(el) => {this.messagesEnd = el}}
                     style={{float: "left", clear: "both"}}>
 
                     </div>
-                    <input ref={(input) => {this.talkInput = input}} type="text" onKeyPress={this._handleInputKeyPress}/>
+                </div>
+                <div className="col s12">
+                     <input style={{margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%"}} placeholder="Type a message   " ref={(input) => {this.talkInput = input}} type="text" onKeyPress={this._handleInputKeyPress}/>
                 </div>
             </div>
         )
