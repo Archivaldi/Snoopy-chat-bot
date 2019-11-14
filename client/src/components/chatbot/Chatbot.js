@@ -4,7 +4,8 @@ import Cookies from "universal-cookie";
 import { v4 as uuid } from "uuid";
 
 import Message from "./Message";
-import Card from "./Card"
+import Card from "./Card";
+import QuickReplies from "./QuickReplies"
 
 const cookies = new Cookies(); 
 
@@ -84,6 +85,14 @@ class  Chatbot extends Component {
                     </div>
                 </div>
             )
+        } else if (message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.quick_replies){
+            return < QuickReplies 
+                    text={message.msg.payload.fields.text ? message.msg.payload.fields.text : null}
+                    key = {i}
+                    replyClick={this._handleQiuckReplyPayload}
+                    speaks={message.speaks}
+                    payload={message.msg.payload.fields.quick_replies.listValue.values}
+                    />
         }
     }
 
