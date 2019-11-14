@@ -19,6 +19,7 @@ class  Chatbot extends Component {
         }
 
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
+        this._handleQiuckReplyPayload = this._handleQiuckReplyPayload.bind(this);
 
         if (cookies.get("userID") === undefined){
             cookies.set("userID", uuid(), {path: "/"})
@@ -110,6 +111,13 @@ class  Chatbot extends Component {
             this.df_text_query(e.target.value);
             e.target.value = "";
         }
+    }
+
+    _handleQiuckReplyPayload(event, payload, text){
+        event.preventDefault();
+        event.stopPropagation();
+
+        this.df_text_query(text);
     }
 
     render() {
