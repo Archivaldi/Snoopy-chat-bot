@@ -2,10 +2,10 @@
   "name": "Snoopy-chat-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "backend": "nodemon index.js",
+    "start": "node server.js",
+    "backend": "nodemon server.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
