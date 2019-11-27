@@ -42,7 +42,17 @@ class Chatbot extends Component {
         this.setState({ messages: [...this.state.messages, says] });
         const res = await axios.post("/api/df_text_query", { text, userID: cookies.get("userID") });
 
-        if (res.data.intent.displayName) {
+            if (res.data.intent.displayName === "Default Fallback Intent") {
+                
+                for (let msg of res.data.fulfillmentMessages) {
+                    says = {
+                        speaks: "bot",
+                        msg: msg
+                    }
+                    this.setState({ messages: [...this.state.messages, says] });
+                }
+
+            }   else if (res.data.intent.displayName) {
             let item = res.data.intent.displayName
             let ob = { item }
             says = {
@@ -63,7 +73,6 @@ class Chatbot extends Component {
             }).then(res => res.json())
                 .then(items => {
                     this.setState({ items })
-                    console.log(this.state.items)
                 })
                 .then(() => {
                     for (let msg of res.data.fulfillmentMessages) {

@@ -15,9 +15,8 @@ module.exports = app => {
 
     app.post('/getItemData', (req,res) => {
       const item = req.body.item
-      console.log(item)
       var results = [];
-      let url = "https://www.ebay.com/sch/i.html?_nkw="+item+"&_sop=15&rt=nc&LH_ItemCondition=1000"
+      let url = "https://www.ebay.com/sch/i.html?_nkw="+item+"+man+women&_sop=15&rt=nc&LH_ItemCondition=1000"
           request.get(url, function (err, response, body) {
             var $ = cheerio.load(body);
             $("li.s-item").each(function (i, element) {
