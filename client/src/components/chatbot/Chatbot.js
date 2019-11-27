@@ -43,10 +43,10 @@ class Chatbot extends Component {
         const res = await axios.post("/api/df_text_query", { text, userID: cookies.get("userID") });
 
             if (res.data.intent.displayName === "Default Fallback Intent") {
-                
+
                 for (let msg of res.data.fulfillmentMessages) {
                     says = {
-                        speaks: "bot",
+                        speaks: "Snoopy",
                         msg: msg
                     }
                     this.setState({ messages: [...this.state.messages, says] });
@@ -56,7 +56,7 @@ class Chatbot extends Component {
             let item = res.data.intent.displayName
             let ob = { item }
             says = {
-                speaks: "bot",
+                speaks: "Snoopy",
                 waitMesssage: "One moment please..."
             }
             this.setState({
@@ -77,7 +77,7 @@ class Chatbot extends Component {
                 .then(() => {
                     for (let msg of res.data.fulfillmentMessages) {
                         says = {
-                            speaks: "bot",
+                            speaks: "Snoopy",
                             msg: msg
                         }
                         this.setState({ messages: [...this.state.messages, says] });
@@ -87,7 +87,7 @@ class Chatbot extends Component {
         } else {
             for (let msg of res.data.fulfillmentMessages) {
                 says = {
-                    speaks: "bot",
+                    speaks: "Snoopy",
                     msg: msg
                 }
                 this.setState({ messages: [...this.state.messages, says] });
@@ -100,7 +100,7 @@ class Chatbot extends Component {
 
         for (let msg of res.data.fulfillmentMessages) {
             let says = {
-                speaks: "bot",
+                speaks: "Snoopy",
                 msg: msg
             }
             this.setState({ messages: [...this.state.messages, says] });
@@ -180,7 +180,7 @@ class Chatbot extends Component {
     render() {
         if (this.state.items.length === 0) {
             return (
-                <div style={{ height: 500, width: 400, position: "absolute", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
+                <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
                     <nav>
                         <div className="nav-wrapper">
                             <a className="brand-logo">Snoopy</a>
@@ -220,7 +220,7 @@ class Chatbot extends Component {
                         })
                         }
 
-                    <div style={{ height: 500, width: 400, position: "absolute", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
+                    <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
                         <nav>
                             <div className="nav-wrapper">
                                 <a className="brand-logo">Snoopy</a>
