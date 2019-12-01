@@ -21,6 +21,7 @@ const Landing = () => {
       <div className="each-fade">
         <div className="image-container">
           <img src={fadeImages[0]} />
+          
         </div>
         
       </div>
@@ -37,12 +38,6 @@ const Landing = () => {
     </Fade>
   )
 }
-// const Landing = () => 
-//     (
-        
-
-//   <h3>Test</h3>
-//     )
 
 
 export default Landing
