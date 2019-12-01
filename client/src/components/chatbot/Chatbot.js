@@ -46,7 +46,7 @@ class Chatbot extends Component {
 
                 for (let msg of res.data.fulfillmentMessages) {
                     says = {
-                        speaks: "Snoopy",
+                        speaks: "bot",
                         msg: msg
                     }
                     this.setState({ messages: [...this.state.messages, says] });
@@ -56,7 +56,7 @@ class Chatbot extends Component {
             let item = res.data.intent.displayName
             let ob = { item }
             says = {
-                speaks: "Snoopy",
+                speaks: "bot",
                 waitMesssage: "One moment please..."
             }
             this.setState({
@@ -77,7 +77,7 @@ class Chatbot extends Component {
                 .then(() => {
                     for (let msg of res.data.fulfillmentMessages) {
                         says = {
-                            speaks: "Snoopy",
+                            speaks: "bot",
                             msg: msg
                         }
                         this.setState({ messages: [...this.state.messages, says] });
@@ -87,7 +87,7 @@ class Chatbot extends Component {
         } else {
             for (let msg of res.data.fulfillmentMessages) {
                 says = {
-                    speaks: "Snoopy",
+                    speaks: "bot",
                     msg: msg
                 }
                 this.setState({ messages: [...this.state.messages, says] });
@@ -100,7 +100,7 @@ class Chatbot extends Component {
 
         for (let msg of res.data.fulfillmentMessages) {
             let says = {
-                speaks: "Snoopy",
+                speaks: "bot",
                 msg: msg
             }
             this.setState({ messages: [...this.state.messages, says] });
