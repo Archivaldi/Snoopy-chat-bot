@@ -3,7 +3,7 @@ import React from "react"
 const ItemList = () => 
     (
         <div>
-            <h2> Here hoes a list of items</h2>
+            <h2>Look what Snoopy found for you</h2>
         </div>
     )
 
