@@ -30,17 +30,18 @@
   }
   
   .each-fade .image-container img {
-    width: 75%;
+    width: 100%;
+    height: 450px;
   }
   
-  .each-fade h2 {
+  /* .each-fade h2 {
     width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     background: #adceed;
-  }
+  } */
 
   .react-slideshow-fade-wrapper{
     width:75%;

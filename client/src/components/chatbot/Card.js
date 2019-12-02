@@ -2,7 +2,7 @@ import React from "react"
 
 const Card = (props) => {
     return (
-        <div style={{float: "left", paddingRight: 30, width: 270}}>
+        <div style={{float: "left", paddingRight: 10, width: 270}}>
             <div className="card">
                 <div className="card-image" style={{width: 240}}>
                     <img alt={props.payload.fields.header.stringValue} src={props.payload.fields.image.stringValue} />
