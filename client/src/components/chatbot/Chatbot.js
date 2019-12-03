@@ -183,10 +183,10 @@ class Chatbot extends Component {
                 <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
                     <nav style={{backgroundColor:"orange"}}>
                         <div className="nav-wrapper">
-                            <a className="brand-logo" style ={{padding:"15px",textAlign:"center"}}>Snoopy concierge</a>
+                            <a className="brand-logo" style ={{padding:"15px",textAlign:"center", fontStyle:"Italic"}}>Snoopy concierge</a>
                         </div>
                     </nav>
-                    <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto" }}>
+                    <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor:"orange" }}>
                         
                         {this.renderMessages(this.state.messages)}
                         <div ref={(el) => { this.messagesEnd = el }}
@@ -221,12 +221,12 @@ class Chatbot extends Component {
                         }
 
                     <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
-                        <nav>
+                        <nav style={{backgroundColor:"orange"}}>
                             <div className="nav-wrapper">
-                                <a className="brand-logo">Snoopy concierge</a>
+                                <a className="brand-logo" style ={{padding:"15px",textAlign:"center", fontStyle:"Italic"}}>Snoopy concierge</a>
                             </div>
                         </nav>
-                        <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto" }}>
+                        <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto",backgroundColor:"orange"}}>
                            
                             {this.renderMessages(this.state.messages)}
                             <div ref={(el) => { this.messagesEnd = el }}
@@ -235,7 +235,7 @@ class Chatbot extends Component {
                             </div>
                         </div>
                         <div className="col s12">
-                            <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
+                            <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%"}} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                         </div>
                     </div>
                 </div>
