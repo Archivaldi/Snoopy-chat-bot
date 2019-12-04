@@ -42,17 +42,17 @@ class Chatbot extends Component {
         this.setState({ messages: [...this.state.messages, says] });
         const res = await axios.post("/api/df_text_query", { text, userID: cookies.get("userID") });
 
-            if (res.data.intent.displayName === "Default Fallback Intent") {
+        if (res.data.intent.displayName === "Default Fallback Intent") {
 
-                for (let msg of res.data.fulfillmentMessages) {
-                    says = {
-                        speaks: "bot",
-                        msg: msg
-                    }
-                    this.setState({ messages: [...this.state.messages, says] });
+            for (let msg of res.data.fulfillmentMessages) {
+                says = {
+                    speaks: "bot",
+                    msg: msg
                 }
+                this.setState({ messages: [...this.state.messages, says] });
+            }
 
-            }   else if (res.data.intent.displayName) {
+        } else if (res.data.intent.displayName) {
             let item = res.data.intent.displayName
             let ob = { item }
             says = {
@@ -120,7 +120,7 @@ class Chatbot extends Component {
                     <div className="card-panel grey lighten-5 z-depth-1">
                         <div style={{ overflow: "hidden" }}>
                             <div className="col s2">
-                                <a className="btn-floating btn-large waves-effect waves-light red">{message.speaks}</a>
+                                <a className="btn-floating btn-large waves-effect waves-light blue darken-3">{message.speaks}</a>
                             </div>
                             <div style={{ overflow: "auto", overflowY: "scroll" }}>
                                 <div style={{ height: 300, width: message.msg.payload.fields.cards.listValue.values.length * 270 }}>
@@ -181,20 +181,20 @@ class Chatbot extends Component {
         if (this.state.items.length === 0) {
             return (
                 <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
-                    <nav style={{backgroundColor:"orange"}}>
+                    <nav style={{ backgroundColor: "orange" }}>
                         <div className="nav-wrapper">
-                            <a className="brand-logo" style ={{padding:"15px",textAlign:"center", fontStyle:"Italic"}}>Snoopy concierge</a>
+                            <a className="brand-logo" style={{ padding: "15px", textAlign: "center", fontStyle: "Italic" }}>Snoopy concierge</a>
                         </div>
                     </nav>
-                    <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor:"orange" }}>
-                        
+                    <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "orange" }}>
+
                         {this.renderMessages(this.state.messages)}
                         <div ref={(el) => { this.messagesEnd = el }}
                             style={{ float: "left", clear: "both" }}>
 
                         </div>
                     </div>
-                    <div className="col s12">
+                    <div className="col s12" style={{ backgroundColor: "orange" }}>
                         <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                     </div>
                 </div>
@@ -202,40 +202,40 @@ class Chatbot extends Component {
         } else {
             return (
                 <div>
-                        {this.state.items.map((prod, i) => {
-                            if (prod.img && prod.title && prod.a && prod.price) {
-                                if (i % 3 === 0){
-                                    return (
-                                        <Item
-                                            key={i}
-                                            img={prod.img}
-                                            title={prod.title}
-                                            link={prod.a}
-                                            price={prod.price}
-                                        />
-                                    )
-                                }
-                                
+                    {this.state.items.map((prod, i) => {
+                        if (prod.img && prod.title && prod.a && prod.price) {
+                            if (i % 3 === 0) {
+                                return (
+                                    <Item
+                                        key={i}
+                                        img={prod.img}
+                                        title={prod.title}
+                                        link={prod.a}
+                                        price={prod.price}
+                                    />
+                                )
                             }
-                        })
+
                         }
+                    })
+                    }
 
                     <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
-                        <nav style={{backgroundColor:"orange"}}>
+                        <nav style={{ backgroundColor: "orange" }}>
                             <div className="nav-wrapper">
-                                <a className="brand-logo" style ={{padding:"15px",textAlign:"center", fontStyle:"Italic"}}>Snoopy concierge</a>
+                                <a className="brand-logo" style={{ padding: "15px", textAlign: "center", fontStyle: "Italic" }}>Snoopy concierge</a>
                             </div>
                         </nav>
-                        <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto",backgroundColor:"orange"}}>
-                           
+                        <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "orange" }}>
+
                             {this.renderMessages(this.state.messages)}
                             <div ref={(el) => { this.messagesEnd = el }}
                                 style={{ float: "left", clear: "both" }}>
 
                             </div>
                         </div>
-                        <div className="col s12">
-                            <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%"}} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
+                        <div className="col s12" style={{ backgroundColor: "orange" }}>
+                            <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                         </div>
                     </div>
                 </div>
