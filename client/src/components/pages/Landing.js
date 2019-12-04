@@ -37,12 +37,5 @@ const Landing = () => {
     </Fade>
   )
 }
-// const Landing = () => 
-//     (
-        
-
-//   <h3>Test</h3>
-//     )
-
 
 export default Landing
