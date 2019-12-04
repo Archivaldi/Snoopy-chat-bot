@@ -4,7 +4,7 @@ const QuickReply = (props) => {
 
     if(props.reply.structValue.fields.payload){
         return (
-            <a style={{margin: 3}} href="" className="btn-floating btn-large waves-effect waves-light red" 
+            <a style={{margin: 3}} href="" className="btn-floating btn-large waves-effect waves-light blue darken-3" 
                 onClick={(event) => 
                     props.click(
                         event,
@@ -17,7 +17,7 @@ const QuickReply = (props) => {
         )
     } else {
         return (
-            <a href={props.reply.structValue.fields.link.stringValue} className="btn-floating btn-large waves-effect waves-light red">
+            <a href={props.reply.structValue.fields.link.stringValue} className="btn-floating btn-large waves-effect waves-light blue darken-3">
                 {props.reply.structValue.fields.text.stringValue}
             </a>
         )

@@ -3,9 +3,10 @@ import { Link } from "react-router-dom"
 
 const Header = () =>
     (
-        <nav >
-            <div className="nav-wrapper" style={{backgroundColor:"bluegreen", marginBottom:"30px"}}>
-                <Link to={"/"} className="brand-logo">Snoopy.Clothing</Link>
+
+        <nav style={{backgroundColor: "transparent"}}>
+            <div className="nav-wrapper" id="header" style={{marginBottom:"30px",fontStyle:"Italic",border:"none !important"}}>
+                <Link to={"/"} className="brand-logo" style={{fontStyle:"italic"}}>Snoopy.Clothing 👕</Link>
             </div>
         </nav>
     )
