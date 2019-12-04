@@ -22,7 +22,6 @@
   
   .each-fade .image-container {
     width: 100%;
->>>>>>> e7d3e51e702b76883024afbe137d136e237f3bec
     overflow: hidden;
 }
 
@@ -31,15 +30,6 @@
     height: 450px;
   }
   
-  /* .each-fade h2 {
->>>>>>> e7d3e51e702b76883024afbe137d136e237f3bec
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background: #adceed;
-  } */
 
   .react-slideshow-fade-wrapper{
     width:75%;
