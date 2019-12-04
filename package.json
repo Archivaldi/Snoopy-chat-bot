@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "backend": "nodemon server.js",
-    "install":"cd client && npm install",
+    "install": "cd client && npm install",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "build": "cd client && npm run build"
@@ -33,6 +33,7 @@
     "cors": "^2.8.5",
     "dialogflow": "0.14.0",
     "express": "4.17.1",
+    "react-color": "^2.17.3",
     "react-slideshow-image": "^1.3.1",
     "request": "^2.88.0"
   },
