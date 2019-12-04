@@ -3,9 +3,10 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import './landing.css';
 const fadeImages = [
-    "https://cdn.acidcow.com/pics/20100616/funny_for_sale_signs_22.jpg",
+    "https://pbs.twimg.com/media/CqtSQ49WcAAOCdQ.jpg",
     "https://cdn.pixabay.com/photo/2015/01/21/13/21/sale-606687__340.png",
-    "http://i.imgur.com/a1GHNZm.jpeg"    
+    "https://i.ytimg.com/vi/9ZMw6dGRkGo/maxresdefault.jpg",
+    "https://i.pinimg.com/originals/bc/7e/d9/bc7ed951e9fcdd9b8178b2b4549fec57.jpg" 
 ];
 
 const fadeProperties = {
@@ -33,6 +34,11 @@ const Landing = () => {
       <div className="each-fade">
         <div className="image-container">
           <img src={fadeImages[2]} />
+        </div>
+      </div>
+      <div className="each-fade">
+        <div className="image-container">
+          <img src={fadeImages[3]} />
         </div>
       </div>
     </Fade>
