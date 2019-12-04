@@ -1,45 +1,47 @@
 .slide-container {
-    width: 70%;
-    margin: auto;
-}
 
-h3 {
-    text-align: center;
-}
-
-.each-slide>div {
+    width: 100%;
+    margin: auto; }
+  
+  h3 {
+    text-align: center; }
+  
+  .each-slide > div {
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     height: 300px;
-}
 
-.each-slide span {
-    padding: 20px;
-    font-size: 20px;
-    background: #efefef;
-    text-align: center;
-}
 
-.each-fade {
+  }
+  
+  .each-fade {
     display: flex;
-}
-
-.each-fade .image-container {
-    width: 75%;
+  }
+  
+  .each-fade .image-container {
+    width: 100%;
+>>>>>>> e7d3e51e702b76883024afbe137d136e237f3bec
     overflow: hidden;
 }
 
 .each-fade .image-container img {
     width: 100%;
-}
-
-.each-fade h2 {
+    height: 450px;
+  }
+  
+  /* .each-fade h2 {
+>>>>>>> e7d3e51e702b76883024afbe137d136e237f3bec
     width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     background: #adceed;
-}
+  } */
+
+  .react-slideshow-fade-wrapper{
+    width:75%;
+    overflow: hidden;
+  }

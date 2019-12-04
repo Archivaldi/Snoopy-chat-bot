@@ -9,9 +9,9 @@ const fadeImages = [
 ];
 
 const fadeProperties = {
-  duration: 5000,
+  duration: 3000,
   transitionDuration: 300,
-  infinite: false,
+  infinite: true,
   indicators: true
 }
 
@@ -21,6 +21,7 @@ const Landing = () => {
       <div className="each-fade">
         <div className="image-container">
           <img src={fadeImages[0]} />
+          
         </div>
         
       </div>
