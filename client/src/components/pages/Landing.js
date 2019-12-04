@@ -2,10 +2,12 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import './landing.css';
+
 const fadeImages = [
-    "https://cdn.acidcow.com/pics/20100616/funny_for_sale_signs_22.jpg",
+    
     "https://cdn.pixabay.com/photo/2015/01/21/13/21/sale-606687__340.png",
-    "http://i.imgur.com/a1GHNZm.jpeg"    
+    "https://i.ytimg.com/vi/9ZMw6dGRkGo/maxresdefault.jpg",
+   
 ];
 
 const fadeProperties = {
@@ -30,11 +32,7 @@ const Landing = () => {
           <img src={fadeImages[1]} />
         </div>
       </div>
-      <div className="each-fade">
-        <div className="image-container">
-          <img src={fadeImages[2]} />
-        </div>
-      </div>
+      
     </Fade>
   )
 }
