@@ -5,9 +5,10 @@ import './App.css';
 const Header = () =>
     (
 
-        <nav class="header">
+
+        <nav style={{backgroundColor: "transparent"}}>
             <div className="nav-wrapper" id="header" style={{marginBottom:"30px",fontStyle:"Italic",border:"none !important"}}>
-                <Link to={"/"} className="brand-logo" style={{fontStyle:"italic"}}>Snoopy Chat </Link>
+                <Link to={"/"} className="brand-logo" style={{fontStyle:"italic"}}>Snoopy.Clothing 👕</Link>
             </div>
         </nav>
     )
