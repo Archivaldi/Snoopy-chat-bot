@@ -194,11 +194,10 @@ class Chatbot extends Component {
         if (this.state.items.length === 0) {
             return (
 
-                <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
-                    <nav style={{ backgroundColor: "#023A4C" }}>
+                <div style={{ height: 500, width: 400, position: "fixed", bottom: 100, right: 50, border: "0px solid lightgrey" }}>
+                    <nav style={{ backgroundColor: "#023A4C", borderRadius: "25px 25px 0 0" }}>
                         <div className="nav-wrapper">
-                            <a className="brand-logo" style={{ padding: "15px", textAlign: "center", fontStyle: "Italic",color:"white"}}><i class="material-icons">shopping_cart</i>
-Snoopy concierge</a>
+                            <a className="brand-logo" style={{ padding: "15px", textAlign: "center", fontStyle: "Italic",color:"white"}}>Snoopy</a>
                         </div>
                     </nav>
                     <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
@@ -209,11 +208,8 @@ Snoopy concierge</a>
 
                         </div>
                     </div>
-                    <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
-                        <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
-                    </div>
-                    <div className="col s12">
-                        <img style={{ height: 300 }} alt="Snoopy" src={this.state.snoopy} />
+                    <div className="col s12" style={{ backgroundColor: "#FFFFFF", borderRadius: "0px 0px 25px 25px" }}>
+                        <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                     </div>
                 </div>
             )
