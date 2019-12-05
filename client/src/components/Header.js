@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import './App.css';
 
 const Header = () =>
     (
-        <nav >
-            <div className="nav-wrapper" style={{backgroundColor:"green", marginBottom:"30px"}}>
-                <Link to={"/"} className="brand-logo">Snoopy.Clothing</Link>
+
+        <nav class="header">
+            <div className="nav-wrapper" id="header" style={{marginBottom:"30px",fontStyle:"Italic",border:"none !important"}}>
+                <Link to={"/"} className="brand-logo" style={{fontStyle:"italic"}}>Snoopy Chat </Link>
             </div>
         </nav>
     )

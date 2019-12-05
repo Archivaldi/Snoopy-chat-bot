@@ -18,7 +18,8 @@ class Chatbot extends Component {
         super(props);
         this.state = {
             messages: [],
-            items: []
+            items: [],
+            snoopy: "https://thumbs.gfycat.com/FineScratchyHochstettersfrog-max-1mb.gif"
         }
 
         this._handleInputKeyPress = this._handleInputKeyPress.bind(this);
@@ -42,17 +43,20 @@ class Chatbot extends Component {
         this.setState({ messages: [...this.state.messages, says] });
         const res = await axios.post("/api/df_text_query", { text, userID: cookies.get("userID") });
 
-            if (res.data.intent.displayName === "Default Fallback Intent") {
+        if (res.data.intent.displayName === "Default Fallback Intent") {
 
-                for (let msg of res.data.fulfillmentMessages) {
-                    says = {
-                        speaks: "bot",
-                        msg: msg
-                    }
-                    this.setState({ messages: [...this.state.messages, says] });
+            for (let msg of res.data.fulfillmentMessages) {
+                says = {
+                    speaks: "bot",
+                    msg: msg
                 }
+                this.setState({ 
+                    messages: [...this.state.messages, says], 
+                    snoopy: "https://media1.giphy.com/media/63HbuBI9AibXDX5UO2/source.gif"
+                });
+            }
 
-            }   else if (res.data.intent.displayName) {
+        } else if (res.data.intent.displayName) {
             let item = res.data.intent.displayName
             let ob = { item }
             says = {
@@ -61,7 +65,8 @@ class Chatbot extends Component {
             }
             this.setState({
                 items: [],
-                messages: [...this.state.messages, says]
+                messages: [...this.state.messages, says],
+                snoopy: "https://media0.giphy.com/media/xFoV7P0JsHwoZvHXP6/source.gif"
             });
             fetch("/getItemData", {
                 method: "POST",
@@ -80,7 +85,10 @@ class Chatbot extends Component {
                             speaks: "bot",
                             msg: msg
                         }
-                        this.setState({ messages: [...this.state.messages, says] });
+                        this.setState({
+                            messages: [...this.state.messages, says],
+                            snoopy: "https://i.pinimg.com/originals/44/dc/9c/44dc9c3abf24f851d23e40e7774ebeec.gif"
+                        });
                     }
 
                 })
@@ -90,7 +98,10 @@ class Chatbot extends Component {
                     speaks: "bot",
                     msg: msg
                 }
-                this.setState({ messages: [...this.state.messages, says] });
+                this.setState({
+                    messages: [...this.state.messages, says],
+                    snoopy: "https://thumbs.gfycat.com/HarmfulApprehensiveCrocodile-size_restricted.gif"
+                });
             }
         }
     }
@@ -180,14 +191,14 @@ class Chatbot extends Component {
     render() {
         if (this.state.items.length === 0) {
             return (
-                <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
-                    <nav style={{backgroundColor:"orange"}}>
+                <div style={{ height: "100%", width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
+                    <nav style={{ backgroundColor: "orange" }}>
                         <div className="nav-wrapper">
-                            <a className="brand-logo" style ={{padding:"15px",textAlign:"center"}}>Snoopy concierge</a>
+                            <a className="brand-logo" style={{ padding: "15px", textAlign: "center" }}>Snoopy concierge</a>
                         </div>
                     </nav>
                     <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto" }}>
-                        
+
                         {this.renderMessages(this.state.messages)}
                         <div ref={(el) => { this.messagesEnd = el }}
                             style={{ float: "left", clear: "both" }}>
@@ -197,37 +208,40 @@ class Chatbot extends Component {
                     <div className="col s12">
                         <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                     </div>
+                    <div className="col s12">
+                        <img style={{ height: 300 }} alt="Snoopy" src={this.state.snoopy} />
+                    </div>
                 </div>
             )
         } else {
             return (
                 <div>
-                        {this.state.items.map((prod, i) => {
-                            if (prod.img && prod.title && prod.a && prod.price) {
-                                if (i % 3 === 0){
-                                    return (
-                                        <Item
-                                            key={i}
-                                            img={prod.img}
-                                            title={prod.title}
-                                            link={prod.a}
-                                            price={prod.price}
-                                        />
-                                    )
-                                }
-                                
+                    {this.state.items.map((prod, i) => {
+                        if (prod.img && prod.title && prod.a && prod.price) {
+                            if (i % 3 === 0) {
+                                return (
+                                    <Item
+                                        key={i}
+                                        img={prod.img}
+                                        title={prod.title}
+                                        link={prod.a}
+                                        price={prod.price}
+                                    />
+                                )
                             }
-                        })
-                        }
 
-                    <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
+                        }
+                    })
+                    }
+
+                    <div style={{ height: "100%", width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
                         <nav>
                             <div className="nav-wrapper">
                                 <a className="brand-logo">Snoopy concierge</a>
                             </div>
                         </nav>
                         <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto" }}>
-                           
+
                             {this.renderMessages(this.state.messages)}
                             <div ref={(el) => { this.messagesEnd = el }}
                                 style={{ float: "left", clear: "both" }}>
@@ -236,6 +250,9 @@ class Chatbot extends Component {
                         </div>
                         <div className="col s12">
                             <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
+                        </div>
+                        <div className="col s12">
+                            <img style={{ height: 300 }} alt="Snoopy" src={this.state.snoopy} />
                         </div>
                     </div>
                 </div>
