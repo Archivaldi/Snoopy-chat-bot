@@ -49,8 +49,8 @@ class Chatbot extends Component {
                     speaks: "bot",
                     msg: msg
                 }
-                this.setState({ 
-                    messages: [...this.state.messages, says], 
+                this.setState({
+                    messages: [...this.state.messages, says],
                     snoopy: "https://media1.giphy.com/media/63HbuBI9AibXDX5UO2/source.gif"
                 });
 
@@ -168,7 +168,7 @@ class Chatbot extends Component {
             return (
 
                 <div style={{ height: 550, width: 293, position: "fixed", bottom: 150, right: 327, border: "0px solid lightgrey" }}>
-                    <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                    <div id="chatbot" style={{ height: 430, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
                         {this.renderMessages(this.state.messages)}
                         <div ref={(el) => { this.messagesEnd = el }}
@@ -184,28 +184,29 @@ class Chatbot extends Component {
         } else {
             return (
                 <div>
-                    {this.state.items.map((prod, i) => {
-                        if (prod.img && prod.title && prod.a && prod.price) {
-                            if (i % 3 === 0) {
-                                return (
-                                    <Item
-                                        key={i}
-                                        img={prod.img}
-                                        title={prod.title}
-                                        link={prod.a}
-                                        price={prod.price}
-                                    />
-                                )
+                    <div className="container" style={{ marginLeft: 150 }}>
+                        {this.state.items.map((prod, i) => {
+                            if (prod.img && prod.title && prod.a && prod.price) {
+                                if (i % 3 === 0) {
+                                    return (
+                                        <Item
+                                            key={i}
+                                            img={prod.img}
+                                            title={prod.title}
+                                            link={prod.a}
+                                            price={prod.price}
+                                        />
+                                    )
+                                }
+
                             }
-
+                        })
                         }
-                    })
-                    }
+                    </div>
 
 
-                    <div style={{ height: 500, width: 293, position: "fixed", bottom: 200, right: 327, border: "0px solid lightgrey" }}>
-
-                        <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                    <div style={{ height: 550, width: 293, position: "fixed", bottom: 150, right: 327, border: "0px solid lightgrey" }}>
+                        <div id="chatbot" style={{ height: 430, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
                             {this.renderMessages(this.state.messages)}
                             <div ref={(el) => { this.messagesEnd = el }}
@@ -213,7 +214,7 @@ class Chatbot extends Component {
 
                             </div>
                         </div>
-                        <div className="col s12" style={{ backgroundColor: "#FFFFFF", borderRadius: "0px 0px 25px 25px" }}>
+                        <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
                             <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                         </div>
                     </div>
