@@ -184,24 +184,26 @@ class Chatbot extends Component {
         } else {
             return (
                 <div>
-                    <div className="container" style={{ marginLeft: 150 }}>
-                        {this.state.items.map((prod, i) => {
-                            if (prod.img && prod.title && prod.a && prod.price) {
-                                if (i % 3 === 0) {
-                                    return (
-                                        <Item
-                                            key={i}
-                                            img={prod.img}
-                                            title={prod.title}
-                                            link={prod.a}
-                                            price={prod.price}
-                                        />
-                                    )
-                                }
+                    <div className="container center-align" style={{ marginLeft: -150, overflow: "auto", height: 700, marginTop: 220, border: "1px solid white" }}>
+                        <div>
+                            {this.state.items.map((prod, i) => {
+                                if (prod.img && prod.title && prod.a && prod.price) {
+                                    if (i % 3 === 0) {
+                                        return (
+                                            <Item
+                                                key={i}
+                                                img={prod.img}
+                                                title={prod.title}
+                                                link={prod.a}
+                                                price={prod.price}
+                                            />
+                                        )
+                                    }
 
+                                }
+                            })
                             }
-                        })
-                        }
+                        </div>
                     </div>
 
 

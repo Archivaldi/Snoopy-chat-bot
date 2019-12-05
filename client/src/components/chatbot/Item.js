@@ -2,17 +2,17 @@ import React from "react"
 
 const Item = (props) => {
     return (
-        <div className="col s3" style={{float: "left", width: 300, marginRight: 20, height: 600, marginTop: 50}}>
+        <div className="col s3" style={{float: "left", width: "22%", marginRight: 10,  marginLeft: 10, marginTop: 5}}>
             <div>
                 <div className="card">
                     <div className="card-image">
-                        <img src={props.img} />
+                        <img src={props.img} style={{height: 200}} />
                     </div>
-                    <div className="card-content">
-                        <p>{props.title}</p>
+                    <div style={{padding: 3}} className="card-content">
+                        <p style={{height: 100, overflow: "auto"}}> {props.title}</p>
                     </div>
-                    <div className="card-action">
-                        <p>{props.price}</p>
+                    <div className="card-action left-align" style={{padding: 2}}>
+                        <p style={{margin:1}}>{props.price}</p>
                         <a alt={props.title} href={props.link}>Link</a>
                     </div>
                 </div>
