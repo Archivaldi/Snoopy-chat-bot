@@ -6,8 +6,8 @@ const Header = () =>
     (
 
         <nav class="header">
-            <div className="nav-wrapper" id="header" style={{marginBottom:"30px",fontStyle:"Italic",border:"none !important"}}>
-                <Link to={"/"} className="brand-logo" style={{fontStyle:"italic"}}>Snoopy Chat </Link>
+            <div className="nav-wrapper" id="header" style={{marginBottom:"30px",border:"none !important",marginLeft:"20px"}}>
+                <Link to={"/"} className="brand-logo" style={{ color:"orange"}}>Snoopy Shopper </Link>
             </div>
         </nav>
     )

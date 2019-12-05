@@ -184,11 +184,11 @@ class Chatbot extends Component {
                 <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
                     <nav style={{ backgroundColor: "#023A4C" }}>
                         <div className="nav-wrapper">
-                            <a className="brand-logo" style={{ padding: "15px", textAlign: "center", fontStyle: "Italic",color:"white"}}><i class="material-icons">shopping_cart</i>
-Snoopy concierge</a>
+                            <a className="brand-logo" style={{ color:"orange"}}><i class="material-icons">shopping_cart</i>
+Snoopy Chat</a>
                         </div>
                     </nav>
-                    <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                    <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "lightyellow" }}>
 
                         {this.renderMessages(this.state.messages)}
                         <div ref={(el) => { this.messagesEnd = el }}
@@ -196,7 +196,7 @@ Snoopy concierge</a>
 
                         </div>
                     </div>
-                    <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
+                    <div className="col s12" style={{ backgroundColor: "lightyellow" }}>
                         <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                     </div>
                 </div>

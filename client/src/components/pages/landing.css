@@ -3,8 +3,10 @@
   overflow: hidden;
   position: relative;
   background: #fefefe;
-  color: #333;
-  border: 1px solid #4a4a4a;
+  color: rgb(31, 100, 91);
+  font-size: larger;
+  margin-top:20px;
+  background-color: lightyellow;
 }
 
 .bounce p {
