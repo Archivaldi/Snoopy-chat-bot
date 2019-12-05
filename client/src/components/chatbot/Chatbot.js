@@ -5,9 +5,7 @@ import { v4 as uuid } from "uuid";
 
 import Message from "./Message";
 import Card from "./Card";
-import QuickReplies from "./QuickReplies"
 import Item from "./Item"
-import materialIcons from 'material-design-icons/iconfont/material-icons.css'
 
 const cookies = new Cookies();
 
