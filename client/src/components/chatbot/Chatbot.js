@@ -127,31 +127,6 @@ class Chatbot extends Component {
     renderOneMessage(message, i) {
         if (message.msg && message.msg.text && message.msg.text.text) {
             return <Message key={i} speaks={message.speaks} text={message.msg.text.text} />
-        } else if (message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.cards) {
-            return (
-                <div key={i}>
-                    <div className="card-panel grey lighten-5 z-depth-1">
-                        <div style={{ overflow: "hidden" }}>
-                            <div className="col s2">
-                                <a className="btn-floating btn-large waves-effect waves-light blue darken-3">{message.speaks}</a>
-                            </div>
-                            <div style={{ overflow: "auto", overflowY: "scroll" }}>
-                                <div style={{ height: 300, width: message.msg.payload.fields.cards.listValue.values.length * 270 }}>
-                                    {this.renderCards(message.msg.payload.fields.cards.listValue.values)}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        } else if (message.msg && message.msg.payload && message.msg.payload.fields && message.msg.payload.fields.quick_replies) {
-            return < QuickReplies
-                text={message.msg.payload.fields.text ? message.msg.payload.fields.text : null}
-                key={i}
-                replyClick={this._handleQiuckReplyPayload}
-                speaks={message.speaks}
-                payload={message.msg.payload.fields.quick_replies.listValue.values}
-            />
         } else if (message.waitMesssage) {
             return <Message key={i} speaks={message.speaks} text={message.waitMesssage} />
         }
@@ -194,12 +169,7 @@ class Chatbot extends Component {
         if (this.state.items.length === 0) {
             return (
 
-                <div style={{ height: 500, width: 400, position: "fixed", bottom: 100, right: 50, border: "0px solid lightgrey" }}>
-                    <nav style={{ backgroundColor: "#023A4C", borderRadius: "25px 25px 0 0" }}>
-                        <div className="nav-wrapper">
-                            <a className="brand-logo" style={{ padding: "15px", textAlign: "center", fontStyle: "Italic",color:"white"}}>Snoopy</a>
-                        </div>
-                    </nav>
+                <div style={{ height: 550, width: 293, position: "fixed", bottom: 150, right: 327, border: "0px solid lightgrey" }}>
                     <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
                         {this.renderMessages(this.state.messages)}
@@ -235,12 +205,7 @@ class Chatbot extends Component {
                     }
 
 
-                    <div style={{ height: 500, width: 400, position: "fixed", bottom: 0, right: 0, border: "0px solid lightgrey" }}>
-                        <nav style={{ backgroundColor: "#023A4C" }}>
-                            <div className="nav-wrapper">
-                                <a className="brand-logo" style={{ padding: "15px", textAlign: "center", fontStyle: "Italic",color:"white" }}><i class="material-icons">shopping_cart</i>Snoopy concierge</a>
-                            </div>
-                        </nav>
+                    <div style={{ height: 500, width: 293, position: "fixed", bottom: 200, right: 327, border: "0px solid lightgrey" }}>
 
                         <div id="chatbot" style={{ height: 388, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
@@ -250,11 +215,8 @@ class Chatbot extends Component {
 
                             </div>
                         </div>
-                        <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
-                            <input style={{ margin: 0, paddingLeft: "1%", paddingRight: "1%", width: "99%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
-                        </div>
-                        <div className="col s12">
-                            <img style={{ height: 300 }} alt="Snoopy" src={this.state.snoopy} />
+                        <div className="col s12" style={{ backgroundColor: "#FFFFFF", borderRadius: "0px 0px 25px 25px" }}>
+                            <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                         </div>
                     </div>
                 </div>

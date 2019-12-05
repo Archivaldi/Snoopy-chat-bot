@@ -4,7 +4,7 @@ const Message = (props) => {
 
     if (props.speaks === "bot") {
         return (
-            <div className="col s12 m8 offset-m2 offset-l3" style={{ width: "95%", marginTop: 50, marginLeft: "10px", borderRadius: "25px 25px 0px 25px", height: "60px" }}>
+            <div className="col s12 m8 offset-m2 offset-l3" style={{ width: "90%", marginTop: 50, marginLeft: "10px", borderRadius: "25px 25px 0px 25px", height: "60px" }}>
                 <div className="card-panel grey lighten-5 z-depth-1" style={{ borderRadius: "25px 25px 0px 25px", height: "60px", paddingTop: 10, paddingBottom: 30 }}>
                     <div className="row valign-wrapper" style={{ borderRadius: "25px 25px 0px 25px", height: "60px" }}>
                         <div className="col s10 right-align" style={{ width: "85%", marginRight: 10, height: "60px" }}>
