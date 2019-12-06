@@ -168,8 +168,8 @@ class Chatbot extends Component {
         if (this.state.items.length === 0) {
             return (
 
-                <div style={{ height: 550, width: 293, position: "fixed", bottom: 150, right: 327, border: "0px solid lightgrey" }}>
-                    <div id="chatbot" style={{ height: 430, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                <div style={{ width: "18em", position: "fixed", bottom: 150, right: "15%", border: "0px solid lightgrey" }}>
+                    <div id="chatbot" style={{ height: "28em", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
                         {this.renderMessages(this.state.messages)}
                         <div ref={(el) => { this.messagesEnd = el }}
@@ -177,7 +177,7 @@ class Chatbot extends Component {
 
                         </div>
                     </div>
-                    <div className="col s12" style={{ backgroundColor: "#FFFFFF", borderRadius: "0px 0px 25px 25px" }}>
+                    <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
                         <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                     </div>
                 </div>
@@ -185,7 +185,7 @@ class Chatbot extends Component {
         } else {
             return (
                 <div>
-                    <div className="container center-align" id="cards-div" style={{width: "50%", marginLeft: 135, overflow: "scroll", height: 700, marginTop: 130, border: "1px solid white" }}>
+                    <div className="container center-align" id="cards-div" style={{ width: "50%", marginLeft: "10%", overflow: "scroll", height: "40em", marginTop: "10%", border: "1px solid white" }}>
                         <div>
                             {this.state.items.map((prod, i) => {
                                 if (prod.img && prod.title && prod.a && prod.price) {
@@ -208,8 +208,8 @@ class Chatbot extends Component {
                     </div>
 
 
-                    <div style={{ height: 550, width: 293, position: "fixed", bottom: 150, right: 327, border: "0px solid lightgrey" }}>
-                        <div id="chatbot" style={{ height: 430, width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                    <div style={{ width: "18em", position: "fixed", bottom: 150, right: "15%", border: "0px solid lightgrey" }}>
+                        <div id="chatbot" style={{ height: "28em", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
                             {this.renderMessages(this.state.messages)}
                             <div ref={(el) => { this.messagesEnd = el }}
