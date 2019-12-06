@@ -168,8 +168,8 @@ class Chatbot extends Component {
         if (this.state.items.length === 0) {
             return (
 
-                <div style={{ width: "18em", position: "fixed", bottom: 150, right: "15%", border: "0px solid lightgrey" }}>
-                    <div id="chatbot" style={{ height: "28em", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                <div style={{ width: "16%", height: "47%", position: "fixed", bottom: "28%", right: "17%", border: "0px solid lightgrey" }}>
+                    <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
                         {this.renderMessages(this.state.messages)}
                         <div ref={(el) => { this.messagesEnd = el }}
@@ -208,8 +208,8 @@ class Chatbot extends Component {
                     </div>
 
 
-                    <div style={{ width: "18em", position: "fixed", bottom: 150, right: "15%", border: "0px solid lightgrey" }}>
-                        <div id="chatbot" style={{ height: "28em", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                    <div style={{ width: "16%", height: "47%", position: "fixed", bottom: "28%", right: "17%", border: "0px solid lightgrey" }}>
+                        <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
 
                             {this.renderMessages(this.state.messages)}
                             <div ref={(el) => { this.messagesEnd = el }}
