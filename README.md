@@ -1,8 +1,8 @@
-[Heroku Link](https://github.com/Archivaldi/Snoopy-chat-bot/ )
+[Heroku Link](https://salty-taiga-78809.herokuapp.com/)
 
 # Snoopy Chat Bot
 
-Full Stack Web app with integrated chat-bot in it. Chat bot could talk with the user and scrape products from ebay that user wants it to search. User gets not only the answers from chat-bot, but actual products that user can buy.  
+Full Stack Web app with integrated chat-bot in it. Chat bot could talk with the user and scrape products from ebay that user wants it to search. User gets not only the answers from chat-bot, but actual products that user can buy. To start to use the bot simply type some message into input field. Please note that the bot scrapes data about clothing only. Ex.: jeans, hats, etc. The main idea of the bot that the user doesn't have to type : `jeans`, user can type `Could you recommend me some shoes?` and the bot will understand that.
 
 Techonologies Used:
 * JavaScript
