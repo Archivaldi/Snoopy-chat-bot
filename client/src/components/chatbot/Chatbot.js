@@ -168,18 +168,23 @@ class Chatbot extends Component {
         if (this.state.items.length === 0) {
             return (
 
-                <div style={{ width: "16%", height: "47%", position: "fixed", bottom: "28%", right: "17%", border: "0px solid lightgrey" }}>
-                    <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
-
-                        {this.renderMessages(this.state.messages)}
-                        <div ref={(el) => { this.messagesEnd = el }}
-                            style={{ float: "left", clear: "both" }}>
-
+                <div>
+                        <div>
+                            <img alt="phone in a hand" src="http://www.pngall.com/wp-content/uploads/1/Mobile-PNG-HD.png" style={{ position: "fixed", bottom: 0, right: "-1%", width: "42.5%", backgroundImage: "transparent" }} />
                         </div>
-                    </div>
-                    <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
-                        <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
-                    </div>
+                        <div style={{ width: "17%", height: "50%", position: "fixed", bottom: "29.5%", right: "18.2%", border: "0px solid lightgrey" }}>
+                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+
+                                {this.renderMessages(this.state.messages)}
+                                <div ref={(el) => { this.messagesEnd = el }}
+                                    style={{ float: "left", clear: "both" }}>
+
+                                </div>
+                            </div>
+                            <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
+                                <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
+                            </div>
+                        </div>
                 </div>
             )
         } else {
@@ -206,19 +211,22 @@ class Chatbot extends Component {
                             }
                         </div>
                     </div>
-
-
-                    <div style={{ width: "16%", height: "47%", position: "fixed", bottom: "28%", right: "17%", border: "0px solid lightgrey" }}>
-                        <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
-
-                            {this.renderMessages(this.state.messages)}
-                            <div ref={(el) => { this.messagesEnd = el }}
-                                style={{ float: "left", clear: "both" }}>
-
-                            </div>
+                    <div>
+                        <div>
+                            <img alt="phone in a hand" src="http://www.pngall.com/wp-content/uploads/1/Mobile-PNG-HD.png" style={{ position: "fixed", bottom: 0, right: "-1%", width: "42.5%", backgroundImage: "transparent" }} />
                         </div>
-                        <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
-                            <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
+                        <div style={{ width: "17%", height: "47%", position: "fixed", bottom: "30.5%", right: "20%", border: "0px solid lightgrey" }}>
+                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+
+                                {this.renderMessages(this.state.messages)}
+                                <div ref={(el) => { this.messagesEnd = el }}
+                                    style={{ float: "left", clear: "both" }}>
+
+                                </div>
+                            </div>
+                            <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
+                                <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
+                            </div>
                         </div>
                     </div>
                 </div>
