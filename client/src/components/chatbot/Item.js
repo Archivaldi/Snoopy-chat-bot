@@ -9,7 +9,7 @@ const Item = (props) => {
                         <img src={props.img} style={{height: 200}} />
                     </div>
                     <div style={{padding: 3}} className="card-content">
-                        <p style={{height: 100, overflow: "auto"}}> {props.title}</p>
+                        <p style={{height: 100}}> {props.title}</p>
                     </div>
                     <div className="card-action left-align" style={{padding: 2}}>
                         <p style={{margin:1}}>{props.price}</p>
