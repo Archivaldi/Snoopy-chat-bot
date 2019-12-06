@@ -5,7 +5,8 @@ import { v4 as uuid } from "uuid";
 
 import Message from "./Message";
 import Card from "./Card";
-import Item from "./Item"
+import Item from "./Item";
+import "../pages/landing.css"
 
 const cookies = new Cookies();
 
@@ -184,7 +185,7 @@ class Chatbot extends Component {
         } else {
             return (
                 <div>
-                    <div className="container center-align" style={{ marginLeft: -150, overflow: "auto", height: 700, marginTop: 220, border: "1px solid white" }}>
+                    <div className="container center-align" id="cards-div" style={{ marginLeft: -150, overflow: "scroll", height: 700, marginTop: 220, border: "1px solid white" }}>
                         <div>
                             {this.state.items.map((prod, i) => {
                                 if (prod.img && prod.title && prod.a && prod.price) {
