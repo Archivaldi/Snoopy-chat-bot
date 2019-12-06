@@ -172,8 +172,8 @@ class Chatbot extends Component {
                         <div>
                             <img alt="phone in a hand" src="http://www.pngall.com/wp-content/uploads/1/Mobile-PNG-HD.png" style={{ position: "fixed", bottom: 0, right: "-1%", width: "42.5%", backgroundImage: "transparent" }} />
                         </div>
-                        <div style={{ width: "17%", height: "50%", position: "fixed", bottom: "29.5%", right: "18.2%", border: "0px solid lightgrey" }}>
-                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                        <div style={{ width: "17%", height: "50%", position: "fixed", bottom: "29.5%", right: "18.2%", border: "0px solid lightgrey", borderRadius: "15px 15px 0 0" }}>
+                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF", borderRadius: "15px 15px 0 0" }}>
 
                                 {this.renderMessages(this.state.messages)}
                                 <div ref={(el) => { this.messagesEnd = el }}
@@ -215,8 +215,8 @@ class Chatbot extends Component {
                         <div>
                             <img alt="phone in a hand" src="http://www.pngall.com/wp-content/uploads/1/Mobile-PNG-HD.png" style={{ position: "fixed", bottom: 0, right: "-1%", width: "42.5%", backgroundImage: "transparent" }} />
                         </div>
-                        <div style={{ width: "17%", height: "47%", position: "fixed", bottom: "30.5%", right: "20%", border: "0px solid lightgrey" }}>
-                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF" }}>
+                        <div style={{ width: "17%", height: "50%", position: "fixed", bottom: "29.5%", right: "18.2%", border: "0px solid lightgrey", borderRadius: "15px 15px 0 0" }}>
+                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF", borderRadius: "15px 15px 0 0" }}>
 
                                 {this.renderMessages(this.state.messages)}
                                 <div ref={(el) => { this.messagesEnd = el }}
