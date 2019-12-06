@@ -185,7 +185,7 @@ class Chatbot extends Component {
         } else {
             return (
                 <div>
-                    <div className="container center-align" id="cards-div" style={{ marginLeft: -150, overflow: "scroll", height: 700, marginTop: 220, border: "1px solid white" }}>
+                    <div className="container center-align" id="cards-div" style={{width: "50%", marginLeft: 135, overflow: "scroll", height: 700, marginTop: 130, border: "1px solid white" }}>
                         <div>
                             {this.state.items.map((prod, i) => {
                                 if (prod.img && prod.title && prod.a && prod.price) {
