@@ -43,6 +43,20 @@
   #cards-div {   
     -webkit-animation: 1s ease 0s normal forwards 1 fadein;
     animation: 1s ease 0s normal forwards 1 fadein;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadein{
