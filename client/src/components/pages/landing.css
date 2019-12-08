@@ -47,6 +47,15 @@
     animation-duration: 2s;
 }
 
+.item {
+
+  transition: all .3s;
+}
+
+.item:hover {
+  transform: translateY(1rem);
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;

@@ -2,7 +2,7 @@ import React from "react"
 
 const Item = (props) => {
     return (
-        <div className="col s3" style={{float: "left", width: "22%", marginRight: 10,  marginLeft: 10, marginTop: 5}}>
+        <div className="col s3 item" style={{float: "left", width: "22%", marginRight: 10,  marginLeft: 10, marginTop: 5}}>
             <div>
                 <div className="card">
                     <div className="card-image">
