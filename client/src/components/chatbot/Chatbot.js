@@ -172,8 +172,8 @@ class Chatbot extends Component {
                         <div>
                             <img alt="phone in a hand" src="http://www.pngall.com/wp-content/uploads/1/Mobile-PNG-HD.png" style={{ position: "fixed", bottom: 0, right: "-1%", width: "42.5%", backgroundImage: "transparent" }} />
                         </div>
-                        <div style={{ width: "17%", height: "50%", position: "fixed", bottom: "29.5%", right: "18.2%", border: "0px solid lightgrey", borderRadius: "15px 15px 0 0" }}>
-                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF", borderRadius: "15px 15px 0 0" }}>
+                        <div style={{ width: "32.4rem", height: "64.5rem", top: "19.5rem", position: "fixed", right: "18.2%", borderRadius: "15px 15px 0 0" }}>
+                            <div id="chatbot" style={{ height: "80%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF", borderRadius: "15px 15px 0 0" }}>
 
                                 {this.renderMessages(this.state.messages)}
                                 <div ref={(el) => { this.messagesEnd = el }}
@@ -182,7 +182,7 @@ class Chatbot extends Component {
                                 </div>
                             </div>
                             <div className="col s12" style={{ backgroundColor: "#FFFFFF" }}>
-                                <input style={{ margin: 20, paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
+                                <input style={{ margin: "2rem", paddingLeft: "1%", paddingRight: "1%", width: "88%" }} placeholder="Type a message   " ref={(input) => { this.talkInput = input }} type="text" onKeyPress={this._handleInputKeyPress} />
                             </div>
                         </div>
                 </div>
@@ -190,7 +190,7 @@ class Chatbot extends Component {
         } else {
             return (
                 <div>
-                    <div className="container center-align" id="cards-div" style={{ width: "50%", marginLeft: "10%", overflow: "scroll", height: "40em", marginTop: "5%", border: "1px solid white" }}>
+                    <div className="container center-align" id="cards-div" style={{ width: "50%", marginLeft: "10%", overflow: "scroll", height: "65rem", marginTop: "5%", border: "1px solid white" }}>
                         <div>
                             {this.state.items.map((prod, i) => {
                                 if (prod.img && prod.title && prod.a && prod.price) {
@@ -215,8 +215,8 @@ class Chatbot extends Component {
                         <div>
                             <img alt="phone in a hand" src="http://www.pngall.com/wp-content/uploads/1/Mobile-PNG-HD.png" style={{ position: "fixed", bottom: 0, right: "-1%", width: "42.5%", backgroundImage: "transparent" }} />
                         </div>
-                        <div style={{ width: "17%", height: "50%", position: "fixed", bottom: "29.5%", right: "18.2%", border: "0px solid lightgrey", borderRadius: "15px 15px 0 0" }}>
-                            <div id="chatbot" style={{ height: "100%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF", borderRadius: "15px 15px 0 0" }}>
+                        <div style={{ width: "32.4rem", height: "64.5rem", top: "19.5rem", position: "fixed", right: "18.2%", borderRadius: "15px 15px 0 0" }}>
+                            <div id="chatbot" style={{ height: "80%", width: "100%", overflow: "auto", backgroundColor: "#FFFFFF", borderRadius: "15px 15px 0 0" }}>
 
                                 {this.renderMessages(this.state.messages)}
                                 <div ref={(el) => { this.messagesEnd = el }}

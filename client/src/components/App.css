@@ -2,6 +2,7 @@ html {
     background-image: url("https://previews.123rf.com/images/number168/number1681507/number168150700646/42341960-abstract-molecules-technology-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    font-size: 62.5%;
 }
 
 @keyframes pulse {
