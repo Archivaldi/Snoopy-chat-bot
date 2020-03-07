@@ -6,7 +6,7 @@ Full Stack Web app with integrated chat-bot in it. Chat bot could talk with the 
 
 ![screenshot](/shots/chat.JPG)
 
-The main idea of the bot that the user doesn't have to type : `jeans`, user can type `Could you recommend me some shoes?` and the bot will understand that.
+The main idea of the bot that the user doesn't have to type : `t-shirt`, user can type `Could you recommend me some t-shirts?` and the bot will understand that.
 
 ![screenshot](/shots/items.JPG)
 
